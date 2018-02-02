@@ -36,10 +36,10 @@ class TicTacToe
   end
 
   def valid_move?(index)
-    position_taken?(board, index)  == false && index.between?(0, 8)
+    position_taken? == false && index.between?(0, 8)
   end
 
-  def position_taken?(index)
+  def position_taken?
      !(@board[index].nil? || @board[index] == " ")
   end
 
@@ -49,7 +49,7 @@ class TicTacToe
     index = input_to_index(user_input)
     if valid_move?(index)
       move(index, current_player)
-      display_boars
+      display_board
     else
       turn
     end
